@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面标题</title>
+</head>
+<body>
+    <header>
+        <!-- 页面头部内容 -->
+    </header>
+    <main>
+        <!-- 页面主要内容 -->
+    </main>
+    <footer>
+        <!-- 页面底部内容 -->
+    </footer>
+</body>
+<script>
+    (function(){
+        const button = document.createElement('button');
+        button.innerHTML = 'capture';
+        document.body.append(button);
+
+        // 测试屏幕录制
+        button.addEventListener('click', async () => {
+        const stream = await navigator.mediaDevices.getDisplayMedia();
+        const recoder = new MediaRecorder(stream);
+        recoder.start();
+
+        const [video] = stream.getVideoTracks();
+        video.addEventListener('ended', () => {
+            recoder.stop();
+        });
+
+        recoder.addEventListener('dataavailable', evt => {
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(evt.data);
+            a.download = 'capture.webm';
+            a.click();
+        });
+        });
+    })()
+</script>
+</html> 
