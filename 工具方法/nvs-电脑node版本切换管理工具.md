@@ -59,3 +59,9 @@ nvs migrate <from> <to>
 
 参考
 https://github.com/jasongin/nvs
+
+
+-------nvm部分使用和说明
+参考
+https://www.python100.com/html/94743.html
+自动重建啥的
