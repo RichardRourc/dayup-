@@ -103,3 +103,6 @@ Function.prototype.myBind = function(context,...args){
 
 总结：
 挂载在函数原型链上，通过闭包保存原来函数调用和新指向的引用，并且考虑到后面参数传值将他们进行合并，最后通过原来函数的call转移到新指向上再使用
+
+
+
