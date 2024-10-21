@@ -58,7 +58,7 @@
                 // 将指令代码添加到一个新的文件中
                 compilation.assets['auto-tracking-directive.js']= {
                     source:()=>directiveCode,
-                    size:()=>directiveCode.Length
+                    size:()=>directiveCode.length
                 };
 
                 callback();
