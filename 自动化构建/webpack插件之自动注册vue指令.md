@@ -68,3 +68,33 @@
 
     module.exports = AutoTrackingPlugin;
 ```
+
+
+##### 使用实例
+使用插件
+```js
+    // webpack.config.js
+    // path 是引入插件的路径，可能是本体，可能是线上包
+    const AutoTrackingPlugin = require('path')
+
+    module.exports = {
+        // ...其他配置项
+        plugins: [
+            new AutoTrackingPlugin({
+                trackingInstance:'path/to/your/tracking/instance', // 埋点实例路径
+            })
+        ]
+    }
+```
+
+使用vue指令
+```js
+    <template>
+        <button v-auto-track="'button_click_id'">Click me</button>
+    </template>
+    <script>
+        export default {
+            // ...
+        }
+    </script>
+```
