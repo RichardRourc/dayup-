@@ -195,3 +195,10 @@ validate 中的参数说明
 ```
 
 + baseDataPath: 用于在验证选项时提供基准路径信息。主要作用：1、描述上下文：在验证过程中，如果出现错误，baseDataPath 将帮助用户理解错误信息中的数据结构层次。例如，当插件选项不符合定义的 schema 时，baseDataPath 将指示错误发生的位置。 2、清晰的错误信息：如果你设置 baseDataPath 为 'options'，当选项不符合 schema 时，错误信息会更清晰地指向具体的选项问题，例如 'options.trackingInstance'，而不只是显示 'trackingInstance'
+
+#### 总结
+通过自定义一个 Webpack 的自定义插件去自动给 Vue 项目添加指令，方便快捷给项目代码添加埋点代码，减少重复及繁琐性。
+
+
+#### 参考资料
+[Webpack 官方文档-自定义插件](https://www.webpackjs.com/contribute/writing-a-plugin/)
